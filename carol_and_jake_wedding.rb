@@ -8,16 +8,28 @@ class CarolAndJakeWedding < Sinatra::Base
   end
 
   get '/' do
-   slim :index
+    if session[:allowed]
+      redirect to('/details')
+    else
+      slim :index
+    end
   end
 
   post '/verify' do
-    logger.info params.inspect.to_s
-    params[:words]
+    if params[:words].downcase.strip == "come celebrate"
+      session[:allowed] = true
+      redirect to('/details')
+    else
+      redirect to('/nope')
+    end
   end
 
   get '/details' do
-    slim :details
+    if session[:allowed]
+      slim :details
+    else
+      redirect to('/')
+    end
   end
 
   get '/nope' do
