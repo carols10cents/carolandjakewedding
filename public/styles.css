@@ -167,3 +167,6 @@ ul.ss-choices {
 .index #content {
   clear: right;
 }
+.not_found img {
+  border: 1px solid #aaa;
+}
