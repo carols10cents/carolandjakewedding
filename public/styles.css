@@ -155,7 +155,12 @@ ul.ss-choices {
 .ss-form-question textarea {
   width: 50%;
 }
-
+ul.bullets {
+  margin-left: 1em;
+}
+ul.bullets li {
+  margin-bottom: 5px;
+}
 .index img {
   float: right;
   margin-bottom: 1em;
