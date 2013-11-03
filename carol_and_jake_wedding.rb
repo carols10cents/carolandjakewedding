@@ -36,6 +36,10 @@ class CarolAndJakeWedding < Sinatra::Base
     slim :nope
   end
 
+  not_found do
+    slim :'404'
+  end
+
   # start the server if ruby file executed directly
   run! if app_file == $0
 end

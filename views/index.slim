@@ -1,8 +1,13 @@
-.verify
-  h2 Enter
-  .directions
-    | To see more details and RSVP, please enter the two largest words on the invitation (upper/lower case doesn't matter). This is just a little check to keep out spammers and crashers. Talk to Carol or Jake if you lost your invitation!
-  form method="post" action="/verify"
-    label for="words" The 2 largest words on the invitation are:
-    input id="words" name="words"
-    input type="submit"
+.index
+  img src="dancing.jpg"
+  h1 Carol & Jake are getting married!
+  #content
+    .verify
+      h2 To see details & RSVP:
+      .instructions
+        p
+          | This is just a little check to keep out spammers and crashers.
+        p
+          | Please enter the first two words on the invitation; they are also the ones in the largest font size. Upper/lowercase doesn't matter. Talk to Carol or Jake if you lost your invitation!
+
+        == slim :_auth_form
