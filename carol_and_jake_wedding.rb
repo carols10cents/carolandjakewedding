@@ -16,7 +16,7 @@ class CarolAndJakeWedding < Sinatra::Base
   end
 
   post '/verify' do
-    if params[:words].downcase.strip == "come celebrate"
+    if ["come celebrate", "there will"].include? params[:words].downcase.strip
       session[:allowed] = true
       redirect to('/details')
     else
